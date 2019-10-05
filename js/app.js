@@ -13,11 +13,10 @@ var userName = prompt('Please give me your name');
 
 // alert('Wow, my favorite sport is ' + favSport + ' as well. It was very nice to meet you, ' + userName);
 
-var loveDogs = prompt('Hey ' + userName + ' do you like dogs?');
+var loveCats = prompt('Hey ' + userName + ' do you like cats?');
 
 
-
-if (loveDogs.toUpperCase() === 'YES' ) {
+if (loveCats.toUpperCase() === 'YES' ) {
   alert('great!');
 } else {
   alert('oh, that\'s too bad');
