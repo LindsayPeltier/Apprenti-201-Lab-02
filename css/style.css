@@ -1,26 +1,26 @@
-/* * {
-  background-color: gray;
-} */
+*{
+  background-color: antiquewhite;
+}
 
 h1 {
-    font-size: 2.5em;
-    color: white;
-    background-color: blue;
-  }
+  font-size: 2em;
+  color: white;
+  background-color: slategray;
+  margin-bottom: 2%;
+}
   
-  h2 {
-  
-    font-size: 1.5em;
-  }
-  
-  h3 {
-    font-size: 1em;
-  }
-  
-  .second {
-    color: red;
-  }
-  
-  p {
-    font-size: 2em;
-  }
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+.second {
+  color: salmon;
+}
+
+#topten{
+  margin-bottom: 2%;
+}
