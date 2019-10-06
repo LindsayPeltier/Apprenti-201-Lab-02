@@ -1,24 +1,32 @@
 'use strict';
 
-// alert('This is proof of life');
+function introGame() {
+  var userName = prompt('Please give me your name');
+  alert('hello ' + userName + ' how are you doing today');
 
-var userName = prompt('Please give me your name');
-// alert('hello ' + userName + ' how are you doing today');
+  var favColor = prompt('What is your favorite color');
+  alert(userName + ' I see your favorite color is ' + favColor);
 
-// var favColor = prompt('What is your favorite color');
+  var favSport = prompt('What is your favorite sport');
+  alert('Wow, my favorite sport is ' + favSport + ' as well. It was very nice to meet you, ' + userName);
 
-// alert(userName + ' I see your favorite color is ' + favColor);
+  var loveDogs = prompt('Hey ' + userName + ' do you like dogs?');
+  if (loveDogs.toUpperCase() === 'YES' ) {
+    alert('great!');
+  } else {
+    alert('oh, that\'s too bad');
+  }
 
-// var favSport = prompt('What is your favorite sport');
+  var loveCats = prompt(userName + ', What about cats?');
+  if (loveCats.toUpperCase() === 'YES' ) {
+    alert('great!');
+  } else {
+    alert('oh, that\'s too bad');
+  }
 
-// alert('Wow, my favorite sport is ' + favSport + ' as well. It was very nice to meet you, ' + userName);
+  var favVacation = prompt('Where is your favorite place to vacation?');
+  alert(userName + ', ' + favVacation + ' sounds nice!');
 
-var loveCats = prompt('Hey ' + userName + ' do you like cats?');
-
-
-if (loveCats.toUpperCase() === 'YES' ) {
-  alert('great!');
-} else {
-  alert('oh, that\'s too bad');
 }
 
+introGame();
