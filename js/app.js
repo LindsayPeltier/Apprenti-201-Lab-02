@@ -1,5 +1,7 @@
 'use strict';
 
+var correctAnswers = 0;
+
 function introGame() {
   var userName = prompt('Please give me your name');
   alert('Hello, ' + userName + ', how are you doing today?');
@@ -28,8 +30,6 @@ function introGame() {
   alert(userName + ', ' + favVacation + ' sounds nice!');
 }
 
-//introGame();
-
 function numberGame() {
 
   var attempts = 0;
@@ -40,29 +40,28 @@ function numberGame() {
   while(attempts < 4) {
     var response = parseInt(prompt('How many pets?'));
     if(response === numPets) {
-      alert('Congratulations, that is correct!');
       correctAnswers++;
+      alert('Congratulations, that is correct!');
       break;
     } else if (response < numPets) {
-      attempts++;
       alert('Too low, try again!');
-    } else if (response > numPets) {
       attempts++;
+    } else if (response > numPets) {
       alert('Too high, try again!');
+      attempts++;
     }
   }
 }
-//numberGame();
 
 function guessingGame() {
 
-  var favAnimal = ['Otter', 'Platypus', 'Squirrel', 'Raven'];
+  var favAnimal = ['otter', 'platypus', 'squirrel', 'raven'];
   var attempts = 0;
   var correctGuess = false;
 
   while (!correctGuess && attempts < 6) {
     var guessAnimal = prompt('This is fun! Last question, and it\'s is a guessing game. Guess my favorite animal.');
-    for (var i = 0; i < favAnimal.length - 1; i++) {
+    for (var i = 0; i < favAnimal.length; i++) {
       if(guessAnimal.toLowerCase() === favAnimal[i]) {
         alert('You\'re right! ' + favAnimal + ' are my favorite animals!');
         correctAnswers++;
@@ -71,13 +70,21 @@ function guessingGame() {
     }
 
     if (correctGuess === false && attempts < 5) {
-      alert('Nope, not one of my favorites.');
       attempts++;
+      alert('Nope, not one of my favorites.');
     } else {
-      totalCorrect();
-      alert('Game over.');
       attempts++;
     }
   }
 }
-guessingGame();
+
+function totalCorrect() {
+  alert('You guessed ' + correctAnswers + ' correct. Good Job!');
+}
+
+(function entryPoint() {
+  introGame();
+  numberGame();
+  guessingGame();
+  totalCorrect();
+})();
