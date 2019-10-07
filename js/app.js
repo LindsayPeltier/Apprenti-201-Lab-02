@@ -28,7 +28,7 @@ function introGame() {
   alert(userName + ', ' + favVacation + ' sounds nice!');
 }
 
-introGame();
+//introGame();
 
 function numberGame() {
 
@@ -37,7 +37,7 @@ function numberGame() {
 
   alert('Guess how many pets I have.');
 
-  while(attempts < 6) {
+  while(attempts < 4) {
     var response = parseInt(prompt('How many pets?'));
     if(response === numPets) {
       alert('Congratulations, that is correct!');
@@ -52,26 +52,26 @@ function numberGame() {
     }
   }
 }
-numberGame();
+//numberGame();
 
 function guessingGame() {
 
-  var favAnimal = ['otter', 'platypus', 'squirrel', 'raven'];
+  var favAnimal = ['Otter', 'Platypus', 'Squirrel', 'Raven'];
   var attempts = 0;
   var correctGuess = false;
 
   while (!correctGuess && attempts < 6) {
-    var guessAnimal = prompt('This is fun! Last question, and it\'s is a guessing game. Guess my favorite animal. .');
+    var guessAnimal = prompt('This is fun! Last question, and it\'s is a guessing game. Guess my favorite animal.');
     for (var i = 0; i < favAnimal.length - 1; i++) {
       if(guessAnimal.toLowerCase() === favAnimal[i]) {
-        alert('You\'re right! ' + favAnimal + ' is one of my favorite animals!');
+        alert('You\'re right! ' + favAnimal + ' are my favorite animals!');
         correctAnswers++;
         correctGuess = true;
       }
     }
 
     if (correctGuess === false && attempts < 5) {
-      alert('Nope, not one of my favorite.');
+      alert('Nope, not one of my favorites.');
       attempts++;
     } else {
       totalCorrect();
@@ -80,5 +80,4 @@ function guessingGame() {
     }
   }
 }
-
 guessingGame();
