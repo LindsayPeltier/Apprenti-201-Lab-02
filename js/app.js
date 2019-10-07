@@ -2,13 +2,13 @@
 
 function introGame() {
   var userName = prompt('Please give me your name');
-  alert('hello ' + userName + ' how are you doing today');
+  alert('Hello, ' + userName + ', how are you doing today?');
 
-  var favColor = prompt('What is your favorite color');
-  alert(userName + ' I see your favorite color is ' + favColor);
+  var favColor = prompt('What is your favorite color?');
+  alert(userName + ' I see your favorite color is ' + favColor + ' .');
 
-  var favSport = prompt('What is your favorite sport');
-  alert('Wow, my favorite sport is ' + favSport + ' as well. It was very nice to meet you, ' + userName);
+  var favSport = prompt('What is your favorite sport?');
+  alert('Wow, my favorite sport is ' + favSport + ' as well. It was very nice to meet you, ' + userName + ' .');
 
   var loveDogs = prompt('Hey ' + userName + ' do you like dogs?');
   if (loveDogs.toUpperCase() === 'YES' ) {
@@ -26,7 +26,59 @@ function introGame() {
 
   var favVacation = prompt('Where is your favorite place to vacation?');
   alert(userName + ', ' + favVacation + ' sounds nice!');
-
 }
 
 introGame();
+
+function numberGame() {
+
+  var attempts = 0;
+  var numPets = 11;
+
+  alert('Guess how many pets I have.');
+
+  while(attempts < 6) {
+    var response = parseInt(prompt('How many pets?'));
+    if(response === numPets) {
+      alert('Congratulations, that is correct!');
+      correctAnswers++;
+      break;
+    } else if (response < numPets) {
+      attempts++;
+      alert('Too low, try again!');
+    } else if (response > numPets) {
+      attempts++;
+      alert('Too high, try again!');
+    }
+  }
+}
+numberGame();
+
+function guessingGame() {
+
+  var favAnimal = ['otter', 'platypus', 'squirrel', 'raven'];
+  var attempts = 0;
+  var correctGuess = false;
+
+  while (!correctGuess && attempts < 6) {
+    var guessAnimal = prompt('This is fun! Last question, and it\'s is a guessing game. Guess my favorite animal. .');
+    for (var i = 0; i < favAnimal.length - 1; i++) {
+      if(guessAnimal.toLowerCase() === favAnimal[i]) {
+        alert('You\'re right! ' + favAnimal + ' is one of my favorite animals!');
+        correctAnswers++;
+        correctGuess = true;
+      }
+    }
+
+    if (correctGuess === false && attempts < 5) {
+      alert('Nope, not one of my favorite.');
+      attempts++;
+    } else {
+      totalCorrect();
+      alert('Game over.');
+      attempts++;
+    }
+  }
+}
+
+guessingGame();
